@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How AI is Reshaping Smartphones | TechSpect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --dark-gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            width: 250px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 0.5rem;
+            outline: none;
+        }
+
+        .search-bar i {
+            color: var(--dark-gray);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Article Page Styles */
+        .article-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb i {
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+
+        .article-header {
+            margin-bottom: 2rem;
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .article-author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .article-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-share {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .share-btn {
+            background: none;
+            border: none;
+            color: var(--dark-gray);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .share-btn:hover {
+            color: var(--primary);
+        }
+
+        .article-hero {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .article-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .article-main {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--dark);
+        }
+
+        .article-body h2 {
+            font-size: 1.8rem;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--primary);
+        }
+
+        .article-body h3 {
+            font-size: 1.4rem;
+            margin: 2rem 0 1rem;
+            color: var(--dark);
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--secondary);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--dark-gray);
+            font-size: 1.2rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.5rem;
+        }
+
+        .article-image {
+            margin: 2rem 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .article-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-top: 0.5rem;
+        }
+
+        .article-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .widget-title i {
+            color: var(--secondary);
+        }
+
+        .related-articles {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .related-article {
+            display: flex;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .related-article:last-child {
+            border-bottom: none;
+        }
+
+        .related-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .related-meta {
+            font-size: 0.8rem;
+            color: var(--dark-gray);
+        }
+
+        .newsletter-widget {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .newsletter-widget .widget-title {
+            color: white;
+        }
+
+        .newsletter-widget p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .newsletter-form input {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .newsletter-form button {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #ea580c;
+        }
+
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: var(--dark);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .article-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .article-author-bio {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .author-bio-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-bio-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .author-bio-content p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        .social-share {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .share-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #e2e8f0;
+            border-radius: 50%;
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+
+        .share-icon:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* More Articles Section */
+        .more-articles {
+            margin-top: 3rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .article-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .article-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-category {
+            color: var(--secondary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--dark-gray);
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 5% 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #334155;
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .article-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-hero {
+                height: 400px;
+            }
+            
+            /* Remove the grid-row: 1 that was forcing sidebar first */
+            .article-sidebar {
+                margin-top: 2rem; /* Add space between article and sidebar */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .nav-links, .search-bar {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .article-title {
+                font-size: 2rem;
+            }
+            
+            .article-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .article-hero {
+                height: 300px;
+            }
+            
+            .article-footer {
+                flex-direction: column;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .article-title {
+                font-size: 1.8rem;
+            }
+            
+            .article-hero {
+                height: 250px;
+            }
+            
+            .article-author-bio {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-mobile-alt"></i>
+                <span>TechSpect</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Reviews</a>
+                <a href="#">News</a>
+                <a href="#">Comparisons</a>
+                <a href="#">Buying Guides</a>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search news...">
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Article Container -->
+    <div class="article-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="#">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#">News</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#">Artificial Intelligence</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>How AI is Reshaping Smartphones</span>
+        </div>
+        
+        <!-- Article Header -->
+        <div class="article-header">
+            <span class="article-category">Artificial Intelligence</span>
+            <h1 class="article-title">How AI is Reshaping the Future of Smartphones in 2023</h1>
+            <div class="article-meta">
+                <div class="article-author">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-img">
+                    <span>By Sarah Johnson</span>
+                </div>
+                <div class="article-date">
+                    <i class="far fa-calendar"></i>
+                    <span>October 15, 2023</span>
+                </div>
+                <div class="article-share">
+                    <span>Share:</span>
+                    <button class="share-btn"><i class="fab fa-twitter"></i></button>
+                    <button class="share-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="share-btn"><i class="fab fa-linkedin-in"></i></button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Article Hero Image -->
+        <div class="article-hero">
+            <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="AI in Smartphones">
+        </div>
+        
+        <!-- Article Content -->
+        <div class="article-content">
+            <div class="article-main">
+                <div class="article-body">
+                    <p>The integration of artificial intelligence into smartphones has evolved from a novelty to a fundamental feature in just a few short years. As we move through 2023, AI is no longer just about voice assistants and basic photo enhancements—it's transforming how we interact with our devices at every level.</p>
+                    
+                    <h2>The AI Revolution in Smartphone Cameras</h2>
+                    
+                    <p>Modern smartphone cameras are perhaps the most visible beneficiaries of AI advancements. What began as simple scene recognition has evolved into sophisticated computational photography systems that can:</p>
+                    
+                    <ul>
+                        <li>Dynamically adjust multiple camera parameters in real-time</li>
+                        <li>Recognize and track specific subjects (faces, pets, vehicles)</li>
+                        <li>Reconstruct low-light images with remarkable clarity</li>
+                        <li>Remove unwanted objects from photos intelligently</li>
+                        <li>Apply professional-grade portrait effects</li>
+                    </ul>
+                    
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="AI Camera Technology">
+                        <p class="image-caption">Google's Pixel phones use AI to enhance photos in real-time</p>
+                    </div>
+                    
+                    <blockquote>"The camera is no longer just a sensor—it's an intelligent system that understands what you're trying to capture and helps you get the best possible result," says Mark Chen, Director of AI Research at Qualcomm.</blockquote>
+                    
+                    <h2>On-Device AI Processing</h2>
+                    
+                    <p>One of the most significant shifts in 2023 has been the move toward on-device AI processing. Rather than relying on cloud servers, modern smartphones now handle complex AI tasks locally thanks to:</p>
+                    
+                    <ol>
+                        <li>Specialized neural processing units (NPUs) in flagship chipsets</li>
+                        <li>More efficient machine learning models</li>
+                        <li>Improved memory bandwidth and storage speeds</li>
+                    </ol>
+                    
+                    <p>This shift brings several advantages including faster response times, better privacy (since data doesn't leave your device), and functionality even without internet connectivity.</p>
+                    
+                    <h2>Personalized User Experiences</h2>
+                    
+                    <p>AI is making smartphones more adaptive to individual users. Some implementations we're seeing in 2023 include:</p>
+                    
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1677442135139-3a9a0b2e1b0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="AI Personalization">
+                        <p class="image-caption">Smartphones now learn user habits to optimize performance</p>
+                    </div>
+                    
+                    <h3>Adaptive Battery and Performance</h3>
+                    
+                    <p>Modern AI systems learn your usage patterns to optimize battery life and performance. For example, your phone might:</p>
+                    
+                    <ul>
+                        <li>Predict which apps you'll use at certain times of day</li>
+                        <li>Pre-load content before you open an app</li>
+                        <li>Adjust processor speeds based on your typical needs</li>
+                    </ul>
+                    
+                    <h3>Context-Aware Suggestions</h3>
+                    
+                    <p>Your smartphone is becoming better at anticipating your needs based on:</p>
+                    
+                    <ul>
+                        <li>Location (suggesting apps or actions when you arrive at work/home)</li>
+                        <li>Time of day (morning routines vs. evening routines)</li>
+                        <li>Connected devices (automatically switching to car mode when Bluetooth connects)</li>
+                    </ul>
+                    
+                    <h2>The Future: AI as the Operating System</h2>
+                    
+                    <p>Looking ahead, industry experts predict that AI won't just be a feature of smartphones—it will become the core of the operating system itself. We're already seeing early signs of this with:</p>
+                    
+                    <ul>
+                        <li>Voice interfaces that handle complex, multi-step requests</li>
+                        <li>Systems that can generate content (text, images, code) on-device</li>
+                        <li>Predictive automation that handles routine tasks without prompting</li>
+                    </ul>
+                    
+                    <p>As AI models continue to shrink in size while growing in capability, our smartphones will become even more powerful assistants—perhaps even evolving into true personal agents that can represent us in digital interactions.</p>
+                    
+                    <div class="article-tags">
+                        <a href="#" class="tag">#ArtificialIntelligence</a>
+                        <a href="#" class="tag">#Smartphones</a>
+                        <a href="#" class="tag">#MobileTech</a>
+                        <a href="#" class="tag">#AI</a>
+                        <a href="#" class="tag">#MachineLearning</a>
+                    </div>
+                    
+                    <div class="article-footer">
+                        <div class="article-author-bio">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Author" class="author-bio-img">
+                            <div class="author-bio-content">
+                                <h4>Sarah Johnson</h4>
+                                <p>Senior Technology Reporter at TechSpect with over a decade of experience covering mobile technology and AI advancements.</p>
+                            </div>
+                        </div>
+                        <div class="social-share">
+                            <a href="#" class="share-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="share-icon"><i class="fas fa-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="article-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-newspaper"></i> Related Articles</h3>
+                    <div class="related-articles">
+                        <div class="related-article">
+                            <div class="related-image">
+                                <img src="https://images.unsplash.com/photo-1677442135140-3a9a0b2e1b10?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="5G">
+                            </div>
+                            <div class="related-content">
+                                <h4>How 5G and AI Are Converging to Create Smarter Cities</h4>
+                                <div class="related-meta">Oct 12, 2023 · 8 min read</div>
+                            </div>
+                        </div>
+                        <div class="related-article">
+                            <div class="related-image">
+                                <img src="https://images.unsplash.com/photo-1677442135141-3a9a0b2e1b11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="VR">
+                            </div>
+                            <div class="related-content">
+                                <h4>The Role of AI in Next-Generation Virtual Reality</h4>
+                                <div class="related-meta">Oct 8, 2023 · 6 min read</div>
+                            </div>
+                        </div>
+                        <div class="related-article">
+                            <div class="related-image">
+                                <img src="https://images.unsplash.com/photo-1677442135142-3a9a0b2e1b12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Chip">
+                            </div>
+                            <div class="related-content">
+                                <h4>How Chip Manufacturers Are Building AI Into Hardware</h4>
+                                <div class="related-meta">Oct 5, 2023 · 7 min read</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget newsletter-widget">
+                    <h3 class="widget-title"><i class="fas fa-envelope"></i> Tech Newsletter</h3>
+                    <p>Get the latest tech news and insights delivered to your inbox weekly.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-tag"></i> Popular Tags</h3>
+                    <div class="article-tags">
+                        <a href="#" class="tag">#Smartphones</a>
+                        <a href="#" class="tag">#AI</a>
+                        <a href="#" class="tag">#5G</a>
+                        <a href="#" class="tag">#Reviews</a>
+                        <a href="#" class="tag">#Android</a>
+                        <a href="#" class="tag">#iOS</a>
+                        <a href="#" class="tag">#Wearables</a>
+                        <a href="#" class="tag">#Innovation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- More Articles -->
+        <div class="more-articles">
+            <div class="section-header">
+                <h2 class="section-title">More in Artificial Intelligence</h2>
+                <a href="#" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="articles-grid">
+                <div class="article-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1677442135143-3a9a0b2e1b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Smart Home">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">AI</span>
+                        <h3 class="card-title">How AI is Making Smart Homes Truly Intelligent</h3>
+                        <div class="card-meta">
+                            <span><i class="far fa-clock"></i> 2 days ago</span>
+                            <span><i class="far fa-comment"></i> 14</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1677442135144-3a9a0b2e1b14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Chip Manufacturing">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Hardware</span>
+                        <h3 class="card-title">The Race to Build Dedicated AI Chips for Smartphones</h3>
+                        <div class="card-meta">
+                            <span><i class="far fa-clock"></i> 3 days ago</span>
+                            <span><i class="far fa-comment"></i> 22</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1677442135145-3a9a0b2e1b15?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Healthcare">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-category">Health Tech</span>
+                        <h3 class="card-title">AI-Powered Health Monitoring Coming to Smartphones</h3>
+                        <div class="card-meta">
+                            <span><i class="far fa-clock"></i> 5 days ago</span>
+                            <span><i class="far fa-comment"></i> 18</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>TechSpect</h3>
+                <p>Your trusted source for tech news and in-depth reviews since 2018.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>News</h3>
+                <ul>
+                    <li><a href="#">Latest</a></li>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Computing</a></li>
+                    <li><a href="#">AI</a></li>
+                    <li><a href="#">Science</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 4 -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, San Francisco</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> news@techspect.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 TechSpect. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const searchBar = document.querySelector('.search-bar');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            searchBar.classList.toggle('active');
+            
+            // Change icon
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.className = icon.className === 'fas fa-bars' ? 'fas fa-times' : 'fas fa-bars';
+            
+            // Toggle body scroll
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    searchBar.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+        
+        // Share button functionality
+        const shareButtons = document.querySelectorAll('.share-btn');
+        
+        shareButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const platform = button.querySelector('i').classList[1];
+                let url = '';
+                
+                switch(platform) {
+                    case 'fa-twitter':
+                        url = `https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(document.title)}`;
+                        break;
+                    case 'fa-facebook-f':
+                        url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`;
+                        break;
+                    case 'fa-linkedin-in':
+                        url = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(document.title)}`;
+                        break;
+                }
+                
+                window.open(url, '_blank', 'width=600,height=400');
+            });
+        });
+        
+        // Responsive adjustment
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navLinks.classList.remove('active');
+                searchBar.classList.remove('active');
+                mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                document.body.style.overflow = '';
+            }
+        });
+    </script>
+</body>
+</html>

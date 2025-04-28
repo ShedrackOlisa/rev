@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 15 Pro Max Review | TechSpect</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f97316;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+            --dark-gray: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Header Styles (Same as before) */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo i {
+            color: var(--secondary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f1f5f9;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            width: 250px;
+        }
+
+        .search-bar input {
+            border: none;
+            background: transparent;
+            width: 100%;
+            padding: 0.5rem;
+            outline: none;
+        }
+
+        .search-bar i {
+            color: var(--dark-gray);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Review Page Specific Styles */
+        .review-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 5%;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb i {
+            font-size: 0.7rem;
+            color: var(--gray);
+        }
+
+        .review-header {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .review-title {
+            font-size: 2.5rem;
+            line-height: 1.2;
+        }
+
+        .review-meta {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .review-meta .author {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .author-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .review-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .review-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: rgba(249, 115, 22, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .review-rating i {
+            font-size: 0.9rem;
+        }
+
+        .review-hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .quick-specs {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .quick-specs h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .spec-value {
+            font-weight: 600;
+        }
+
+        .price-badge {
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+
+        .review-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        .main-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .content-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .content-section p {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .pros-list, .cons-list {
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .pros-list {
+            background-color: rgba(34, 197, 94, 0.1);
+            border-left: 4px solid #22c55e;
+        }
+
+        .cons-list {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+        }
+
+        .pros-list h3, .cons-list h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pros-list h3 {
+            color: #22c55e;
+        }
+
+        .cons-list h3 {
+            color: #ef4444;
+        }
+
+        .pros-cons ul {
+            list-style-position: inside;
+        }
+
+        .pros-cons li {
+            margin-bottom: 0.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .gallery-image {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .widget-title i {
+            color: var(--secondary);
+        }
+
+        .buy-now-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .buy-now-btn:hover {
+            background-color: #ea580c;
+        }
+
+        .retailer-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .retailer-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .retailer-item:last-child {
+            border-bottom: none;
+        }
+
+        .retailer-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .retailer-price {
+            font-weight: 600;
+        }
+
+        .related-reviews {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .related-item {
+            display: flex;
+            gap: 1rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .related-item:last-child {
+            border-bottom: none;
+        }
+
+        .related-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-content h4 {
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .related-rating {
+            color: var(--secondary);
+            font-size: 0.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .related-price {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Review Conclusion */
+        .review-conclusion {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-top: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .conclusion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .conclusion-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .final-rating {
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rating-categories {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .rating-category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .category-name {
+            font-weight: 500;
+        }
+
+        .category-rating {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        /* Footer (Same as before) */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 4rem 5% 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #334155;
+            border-radius: 50%;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 3rem;
+            margin-top: 2rem;
+            border-top: 1px solid #334155;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .review-hero {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-image {
+                height: 300px;
+            }
+            
+            .review-content {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Remove any grid-row properties that were forcing sidebar first */
+            .sidebar {
+                margin-top: 2rem; /* Add space between main content and sidebar */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                position: relative;
+            }
+            
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+            }
+            
+            .nav-links.active {
+                max-height: 500px; /* Adjust based on your content */
+            }
+            
+            .nav-links a {
+                padding: 1rem;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .review-title {
+                font-size: 2rem;
+            }
+            
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+            
+            .rating-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .review-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            
+            .review-title {
+                font-size: 1.8rem;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                position: relative;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px; /* Height of navbar */
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                z-index: 100;
+            }
+            
+            .nav-links.active {
+                max-height: 500px; /* Adjust based on your content */
+                padding: 1rem;
+                border-top: 1px solid #f1f5f9;
+            }
+            
+            .nav-links a {
+                width: 100%;
+                padding: 1rem 0;
+                border-bottom: 1px solid #f1f5f9;
+            }
+            
+            .nav-links a:last-child {
+                border-bottom: none;
+            }
+            
+            .search-bar {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                border-radius: 0;
+                margin-top: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                padding: 0 1rem;
+                background-color: white;
+                z-index: 99;
+            }
+            
+            .search-bar.active {
+                max-height: 100px;
+                padding: 1rem;
+                margin-top: 0;
+                border-top: 1px solid #f1f5f9;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                z-index: 101;
+                transition: transform 0.3s;
+            }
+            
+            .mobile-menu-btn.active {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-mobile-alt"></i>
+                <span>TechSpect</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Reviews</a>
+                <a href="#">News</a>
+                <a href="#">Comparisons</a>
+                <a href="#">Buying Guides</a>
+            </div>
+            
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search reviews...">
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+    
+    <!-- Review Container -->
+    <div class="review-container">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="#">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#">Reviews</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#">Smartphones</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>iPhone 15 Pro Max</span>
+        </div>
+        
+        <!-- Review Header -->
+        <div class="review-header">
+            <h1 class="review-title">iPhone 15 Pro Max Review: The Pinnacle of Smartphone Technology</h1>
+            <div class="review-meta">
+                <div class="author">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Author" class="author-img">
+                    <span>By David Chen</span>
+                </div>
+                <div class="review-date">
+                    <i class="far fa-calendar"></i>
+                    <span>October 15, 2023</span>
+                </div>
+                <div class="review-rating">
+                    <i class="fas fa-star"></i>
+                    <span>4.8 / 5.0</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Review Hero Section -->
+        <div class="review-hero">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1664478546384-d57ffe74a78c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="iPhone 15 Pro Max">
+            </div>
+            <div class="quick-specs">
+                <h3>Key Specifications</h3>
+                <div class="spec-item">
+                    <span class="spec-label">Display:</span>
+                    <span class="spec-value">6.7" Super Retina XDR</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Chipset:</span>
+                    <span class="spec-value">A17 Pro</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">RAM:</span>
+                    <span class="spec-value">8GB</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Storage:</span>
+                    <span class="spec-value">256GB/512GB/1TB</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Camera:</span>
+                    <span class="spec-value">48MP + 12MP + 12MP</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">Battery:</span>
+                    <span class="spec-value">4422 mAh</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-label">OS:</span>
+                    <span class="spec-value">iOS 17</span>
+                </div>
+                <div class="price-badge">Starting at $1,199</div>
+                <a href="#buy-now" class="buy-now-btn">Buy Now</a>
+            </div>
+        </div>
+        
+        <!-- Review Content -->
+        <div class="review-content">
+            <div class="main-content">
+                <div class="content-section">
+                    <h2>Introduction</h2>
+                    <p>The iPhone 15 Pro Max represents Apple's most ambitious smartphone yet, packing cutting-edge technology into a refined titanium design. As the flagship of the iPhone 15 lineup, it brings significant upgrades including the new A17 Pro chip, an advanced camera system with tetraprism zoom, and the innovative Action button.</p>
+                    <p>After two weeks of extensive testing, we've evaluated every aspect of this device to determine whether it's worth its premium price tag and if it truly sets a new standard for smartphones in 2023.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Design and Build Quality</h2>
+                    <p>Apple has finally moved away from stainless steel to a brushed titanium frame, resulting in a device that's both more premium and surprisingly lighter (221g vs. 240g in the 14 Pro Max). The matte textured back glass provides excellent grip, and the thinner bezels make the display appear even more immersive.</p>
+                    <p>The new Action button replaces the mute switch, offering customizable functionality. While it takes some getting used to, we found it particularly useful for quickly launching the camera or flashlight. The USB-C port is a welcome change, though data transfer speeds vary based on the cable used.</p>
+                    
+                    <div class="image-gallery">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1695048135186-3b68b1b5fd17?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="iPhone 15 Pro Max Design">
+                        </div>
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1695048135190-8c8a4c8b8a1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="iPhone 15 Pro Max Back">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Display</h2>
+                    <p>The 6.7-inch Super Retina XDR display remains industry-leading, with several notable improvements:</p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>Brighter 2000 nits peak HDR brightness (up from 1600 nits)</li>
+                        <li>More power-efficient LTPO OLED technology</li>
+                        <li>Thinner bezels (1.55mm vs. 2.15mm)</li>
+                        <li>Improved outdoor visibility with new anti-reflective coating</li>
+                    </ul>
+                    <p>We measured color accuracy at an impressive ΔE < 1.5, making this one of the most color-accurate displays available. The always-on display is more customizable and less distracting than last year's implementation.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Performance</h2>
+                    <p>The new A17 Pro chip built on 3nm process is an absolute powerhouse:</p>
+                    
+                    <div class="pros-cons">
+                        <div class="pros-list">
+                            <h3><i class="fas fa-check-circle"></i> Pros</h3>
+                            <ul>
+                                <li>20% faster CPU performance than A16</li>
+                                <li>40% more powerful GPU with hardware ray tracing</li>
+                                <li>Excellent thermal management</li>
+                                <li>Can run console-quality games like Resident Evil 4</li>
+                                <li>16-core Neural Engine for advanced machine learning</li>
+                            </ul>
+                        </div>
+                        <div class="cons-list">
+                            <h3><i class="fas fa-times-circle"></i> Cons</h3>
+                            <ul>
+                                <li>Overkill for most everyday tasks</li>
+                                <li>Some throttling under sustained heavy loads</li>
+                                <li>Limited by iOS in terms of pro applications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <p>In our benchmarks, the iPhone 15 Pro Max scored 2900 in single-core and 7200 in multi-core Geekbench 6 tests, making it the fastest smartphone chip currently available. The 8GB of RAM helps with multitasking, though Android flagships now offer up to 16GB.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Camera System</h2>
+                    <p>The camera upgrades are where the 15 Pro Max truly shines:</p>
+                    
+                    <div class="image-gallery">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1695048135196-3b68b1b5fd18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="iPhone 15 Pro Max Camera">
+                        </div>
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1695048135199-3b68b1b5fd19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="iPhone 15 Pro Max Camera Samples">
+                        </div>
+                    </div>
+                    
+                    <p>The new 48MP main sensor captures stunning detail, especially in good lighting. The 5x tetraprism zoom (120mm equivalent) is a game-changer for distant subjects, though it requires decent lighting. Night mode performance has improved by about 1.5 stops compared to the 14 Pro Max.</p>
+                    <p>Video capabilities remain unmatched, with Cinematic mode now supporting 4K/30fps and the new Log encoding giving professionals more flexibility in post-production.</p>
+                </div>
+                
+                <div class="content-section">
+                    <h2>Battery Life</h2>
+                    <p>Despite the more powerful chip, battery life sees modest improvements:</p>
+                    <ul style="margin-left: 1.5rem; margin-bottom: 1rem;">
+                        <li>12 hours 45 mins screen-on time (mixed use)</li>
+                        <li>18 hours video playback</li>
+                        <li>Excellent standby efficiency</li>
+                        <li>Faster charging (27W wired, 15W MagSafe)</li>
+                    </ul>
+                    <p>While not class-leading, the battery performance is respectable given the power of the A17 Pro. The USB-C port enables faster charging (50% in 30 mins with compatible charger), though Apple still doesn't include a charger in the box.</p>
+                </div>
+                
+                <div class="review-conclusion">
+                    <div class="conclusion-header">
+                        <h2 class="conclusion-title">Verdict</h2>
+                        <div class="final-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 / 5.0</span>
+                        </div>
+                    </div>
+                    
+                    <p>The iPhone 15 Pro Max is the most capable iPhone ever made and arguably the best smartphone available today. While the upgrades over the 14 Pro Max are evolutionary rather than revolutionary, the combination of titanium design, phenomenal camera system, and unmatched performance makes this an easy recommendation for those wanting the absolute best.</p>
+                    <p>That said, the $1,199 starting price is hard to justify for most users, especially when the standard iPhone 15 offers many of the same core experiences at a much lower cost. This is a device for power users, photography enthusiasts, and those who demand the latest technology regardless of price.</p>
+                    
+                    <div class="rating-categories">
+                        <div class="rating-category">
+                            <span class="category-name">Design</span>
+                            <span class="category-rating">4.5/5</span>
+                        </div>
+                        <div class="rating-category">
+                            <span class="category-name">Display</span>
+                            <span class="category-rating">5/5</span>
+                        </div>
+                        <div class="rating-category">
+                            <span class="category-name">Performance</span>
+                            <span class="category-rating">5/5</span>
+                        </div>
+                        <div class="rating-category">
+                            <span class="category-name">Camera</span>
+                            <span class="category-rating">4.5/5</span>
+                        </div>
+                        <div class="rating-category">
+                            <span class="category-name">Battery</span>
+                            <span class="category-rating">4/5</span>
+                        </div>
+                        <div class="rating-category">
+                            <span class="category-name">Value</span>
+                            <span class="category-rating">3.5/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar-widget" id="buy-now">
+                    <h3 class="widget-title"><i class="fas fa-shopping-cart"></i> Where to Buy</h3>
+                    <div class="retailer-list">
+                        <div class="retailer-item">
+                            <span class="retailer-name"><i class="fab fa-apple"></i> Apple Store</span>
+                            <span class="retailer-price">$1,199.00</span>
+                        </div>
+                        <div class="retailer-item">
+                            <span class="retailer-name"><i class="fab fa-amazon"></i> Amazon</span>
+                            <span class="retailer-price">$1,149.99</span>
+                        </div>
+                        <div class="retailer-item">
+                            <span class="retailer-name"><i class="fas fa-bolt"></i> Best Buy</span>
+                            <span class="retailer-price">$1,179.99</span>
+                        </div>
+                        <div class="retailer-item">
+                            <span class="retailer-name"><i class="fas fa-sim-card"></i> Carrier Deals</span>
+                            <span class="retailer-price">From $999</span>
+                        </div>
+                    </div>
+                    <a href="#" class="buy-now-btn">Compare All Prices</a>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-link"></i> Quick Links</h3>
+                    <div class="retailer-list">
+                        <div class="retailer-item">
+                            <a href="#" class="retailer-name">Full Specifications</a>
+                        </div>
+                        <div class="retailer-item">
+                            <a href="#" class="retailer-name">Camera Samples</a>
+                        </div>
+                        <div class="retailer-item">
+                            <a href="#" class="retailer-name">Benchmark Results</a>
+                        </div>
+                        <div class="retailer-item">
+                            <a href="#" class="retailer-name">User Reviews</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title"><i class="fas fa-mobile-alt"></i> Related Reviews</h3>
+                    <div class="related-reviews">
+                        <div class="related-item">
+                            <div class="related-image">
+                                <img src="https://images.unsplash.com/photo-1664478546384-d57ffe74a78c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Samsung Galaxy S23 Ultra">
+                            </div>
+                            <div class="related-content">
+                                <h4>Samsung Galaxy S23 Ultra</h4>
+                                <div class="related-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <span>5.0</span>
+                                </div>
+                                <div class="related-price">$1,199.99</div>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-image">
+                                <img src="https://images.unsplash.com/photo-1682686580391-615b3b0b49a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Google Pixel 7 Pro">
+                            </div>
+                            <div class="related-content">
+                                <h4>Google Pixel 7 Pro</h4>
+                                <div class="related-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <span>4.0</span>
+                                </div>
+                                <div class="related-price">$899.00</div>
+                            </div>
+                        </div>
+                        <div class="related-item">
+                            <div class="related-image">
+                                <img src="https://images.unsplash.com/photo-1637074655361-72e7b5f238d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="OnePlus 11">
+                            </div>
+                            <div class="related-content">
+                                <h4>OnePlus 11 5G</h4>
+                                <div class="related-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                    <span>4.5</span>
+                                </div>
+                                <div class="related-price">$699.99</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Column 1 -->
+            <div class="footer-column">
+                <h3>TechSpect</h3>
+                <p>Your trusted source for unbiased gadget reviews and tech news since 2018.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Column 2 -->
+            <div class="footer-column">
+                <h3>Reviews</h3>
+                <ul>
+                    <li><a href="#">Smartphones</a></li>
+                    <li><a href="#">Laptops</a></li>
+                    <li><a href="#">Tablets</a></li>
+                    <li><a href="#">Wearables</a></li>
+                    <li><a href="#">Audio</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 3 -->
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <!-- Column 4 -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Tech Street, San Francisco</li>
+                    <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+                    <li><i class="fas fa-envelope"></i> info@techspect.com</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 TechSpect. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Improved Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            const searchBar = document.querySelector('.search-bar');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                // Toggle active class on nav links and search bar
+                navLinks.classList.toggle('active');
+                searchBar.classList.toggle('active');
+                
+                // Toggle active class on button for animation
+                this.classList.toggle('active');
+                
+                // Change icon
+                const icon = this.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.className = 'fas fa-times';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+                } else {
+                    icon.className = 'fas fa-bars';
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+            
+            // Close menu when clicking on a link (for single page navigation)
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navLinks.classList.remove('active');
+                        searchBar.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+                        mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768) {
+                    const isClickInsideNav = navLinks.contains(event.target) || 
+                                          mobileMenuBtn.contains(event.target) ||
+                                          searchBar.contains(event.target);
+                    
+                    if (!isClickInsideNav && navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        searchBar.classList.remove('active');
+                        mobileMenuBtn.classList.remove('active');
+                        mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+            
+            // Responsive adjustment
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    navLinks.classList.remove('active');
+                    searchBar.classList.remove('active');
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenuBtn.querySelector('i').className = 'fas fa-bars';
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
